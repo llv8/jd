@@ -1,0 +1,29 @@
+{
+  "name": "jd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^1.0.1",
+    "node-sass": "^4.10.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "vue-html-loader": "^1.2.4",
+    "vue-loader": "^15.4.2",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.5.17",
+    "webpack": "^4.26.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  },
+  "dependencies": {
+    "vue": "^2.5.17"
+  }
+}
