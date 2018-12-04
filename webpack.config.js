@@ -1,17 +1,16 @@
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-module.exports={
+module.exports = {
 	mode: 'none',
-	entry:{
+	entry: {
 		app: './src/main.js'
 	},
-	devServer:{
+	devServer: {
 
 		contentBase: './dist'
 	},
 	module: {
-		rules:[
-			{
+		rules: [{
 				test: /\.vue$/,
 				loader: 'vue-loader',
 				options: {
@@ -28,14 +27,32 @@ module.exports={
 					"css-loader",
 					"sass-loader"
 				]
+			}, {
+				test: /\.css$/,
+				loader: "style-loader!css-loader?importLoaders=1"
+			},
+			{
+				test: /\.(ttf|eot|woff|woff2)$/,
+				loader: 'file-loader',
+				options: {
+					name: 'fonts/[name].[ext]',
+				},
+			}, {
+				test: /\.(png|jpg|gif)$/,
+				use: [{
+					loader: 'url-loader',
+					options: {
+						limit: 8192
+					}
+				}]
 			}
 		]
 	},
-	plugins: [                                      
+	plugins: [
 		new VueLoaderPlugin()
-	], 
+	],
 
-	output:{
+	output: {
 		filename: 'bundle.js',
 		path: path.resolve(__dirname, 'dist')
 	}
