@@ -1,10 +1,10 @@
 <template>
-  <div>main xx</div>
+	<div><img src="../static/header2.png"/></div>
 </template>
 
 <script>
 export default {
-  name: "lmain"
+  name: "lheader"
 };
 </script>
 
