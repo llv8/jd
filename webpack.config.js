@@ -3,11 +3,19 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 module.exports = {
 	mode: 'none',
 	entry: {
-		app: './src/main.js'
+		app: './src//main.js'
 	},
 	devServer: {
-
 		contentBase: './dist'
+	},
+	resolve: {
+		alias: {
+			'@': path.resolve(__dirname, 'src/components'),
+			'Cmn': path.resolve(__dirname, 'src/common'),
+			'Rtr': path.resolve(__dirname, 'src/router'),
+			'Api': path.resolve(__dirname, 'src/api')
+		},
+		extensions: ['.js', '.vue', '.json']
 	},
 	module: {
 		rules: [{

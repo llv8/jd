@@ -1,10 +1,11 @@
 <template>
-<div>home</div>
+<div><span>myaccount123</span></div>
 </template>
 
 <script>
+
 export default {
-  name: "LHome",
+  name: "LMyAccount",
   components: {
   }
 };

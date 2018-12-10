@@ -19,6 +19,7 @@
     "url-loader": "^1.1.2",
     "vue-html-loader": "^1.2.4",
     "vue-loader": "^15.4.2",
+    "vue-router": "^3.0.2",
     "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.5.17",
     "webpack": "^4.26.1",

@@ -1,10 +1,12 @@
 import Vue from 'vue';
-import Home from './page/Home.vue';
+import Element from "element-ui";
+import router from 'Rtr/router-config.js';
+import TheTemplate from 'Cmn/TheTemplate';
+import "element-ui/lib/theme-chalk/index.css";
+Vue.use(Element);
 var vm = new Vue({
+	router,
 	el: '#app',
-	data: {
-		message: 'hello first vue'
-	},
-	render: h => h(Home)
-
+	data: {},
+	render: h => h(TheTemplate)
 });
