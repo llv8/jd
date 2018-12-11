@@ -10,10 +10,13 @@ module.exports = {
 	},
 	resolve: {
 		alias: {
+
 			'@': path.resolve(__dirname, 'src/components'),
 			'Cmn': path.resolve(__dirname, 'src/common'),
 			'Rtr': path.resolve(__dirname, 'src/router'),
-			'Api': path.resolve(__dirname, 'src/api')
+			'Api': path.resolve(__dirname, 'src/api'),
+			'Ast': path.resolve(__dirname, 'src/assets'),
+
 		},
 		extensions: ['.js', '.vue', '.json']
 	},
@@ -53,6 +56,10 @@ module.exports = {
 						limit: 8192
 					}
 				}]
+			},
+			{
+				test: /\.svg$/,
+				loader: 'svg-inline-loader'
 			}
 		]
 	},
