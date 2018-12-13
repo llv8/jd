@@ -27,7 +27,9 @@ module.exports = {
 				options: {
 					loaders: {
 						scss: 'vue-style-loader!css-loader!sass-loader', // <style lang="scss">
-						sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax' // <style lang="sass">
+						sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax', // <style lang="sass">
+						less: 'vue-style-loader!css-loader!less-loader'
+
 					}
 				}
 			},
@@ -43,23 +45,31 @@ module.exports = {
 				loader: "style-loader!css-loader?importLoaders=1"
 			},
 			{
-				test: /\.(ttf|eot|woff|woff2)$/,
-				loader: 'file-loader',
-				options: {
-					name: 'fonts/[name].[ext]',
-				},
-			}, {
-				test: /\.(png|jpg|gif)$/,
-				use: [{
-					loader: 'url-loader',
-					options: {
-						limit: 8192
-					}
-				}]
+				test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+				loader: 'url-loader',
+				query: {
+					limit: 10000
+				}
+			},
+			{
+				test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+				loader: 'url-loader',
+				query: {
+					limit: 10000,
+					name: 'fonts/[name].[hash:7].[ext]'
+				}
 			},
 			{
 				test: /\.svg$/,
 				loader: 'svg-inline-loader'
+			}, {
+				test: /\.less$/,
+				use: ['style-loader', {
+					loader: 'css-loader',
+					options: {
+						importLoaders: 1
+					}
+				}, 'less-loader']
 			}
 		]
 	},

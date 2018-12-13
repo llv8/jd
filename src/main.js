@@ -3,6 +3,7 @@ import Element from "element-ui";
 import router from 'Rtr/router-config.js';
 import TheTemplate from 'Cmn/TheTemplate';
 import "element-ui/lib/theme-chalk/index.css";
+//import "./theme/element-#6FD464/index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
 import "./assets/css/style.css";

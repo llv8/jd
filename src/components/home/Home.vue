@@ -1,48 +1,38 @@
 <template>
-<div>home</div>
+  <div>
+    <el-carousel :interval="5000" arrow="always">
+      <el-carousel-item>
+        <img src="~Ast/img/carousel1.png">
+      </el-carousel-item>
+      <el-carousel-item>
+        <img src="~Ast/img/carousel2.png">
+      </el-carousel-item>
+      <el-carousel-item>
+        <img src="~Ast/img/carousel3.png">
+      </el-carousel-item>
+      <el-carousel-item>
+        <img src="~Ast/img/carousel4.png">
+      </el-carousel-item>
+      <el-carousel-item>
+        <img src="~Ast/img/carousel5.png">
+      </el-carousel-item>
+    </el-carousel>
+    <l-product-sale-summary-list></l-product-sale-summary-list>
+  </div>
 </template>
 
 <script>
+import ProductSaleSummaryList from "Cmn/ProductSaleSummaryList";
 export default {
   name: "LHome",
   components: {
+    LProductSaleSummaryList: ProductSaleSummaryList
+  },
+  data: function() {
+    return {};
   }
 };
 </script>
 
  <style>
-.el-header,
-.el-footer {
-  background-color: #b3c0d1;
-  color: #333;
-  text-align: center;
-  line-height: 60px;
-}
-
-.el-aside {
-  background-color: #d3dce6;
-  color: #333;
-  text-align: center;
-  line-height: 200px;
-}
-
-.el-main {
-  background-color: #e9eef3;
-  color: #333;
-  text-align: center;
-  line-height: 160px;
-}
-
-body > .el-container {
-  margin-bottom: 40px;
-}
-
-.el-container:nth-child(5) .el-aside,
-.el-container:nth-child(6) .el-aside {
-  line-height: 260px;
-}
-
-.el-container:nth-child(7) .el-aside {
-  line-height: 320px;
-}
 </style>
