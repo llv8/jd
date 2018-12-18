@@ -18,7 +18,7 @@
       </el-col>
       <el-col :span="8">
         <span>
-          <el-input placeholder="请输入内容" v-model="input5" class="input-with-select">
+          <el-input placeholder="请输入内容" v-model="searchInput" class="input-with-select">
             <el-button slot="append" icon="el-icon-search"></el-button>
           </el-input>
         </span>
@@ -28,7 +28,16 @@
 </template>
 <script>
 export default {
-  name: "LTheTitleBar"
+  name: "LTheTitleBar",
+  data: function() {
+    return {
+      activeIndex: "1",
+      searchInput: ""
+    };
+  },
+  methods: {
+    handleSelect: function() {}
+  }
 };
 </script>
 

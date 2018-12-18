@@ -1,38 +1,47 @@
 <template>
-  <div>
-    <el-carousel :interval="5000" arrow="always">
-      <el-carousel-item>
-        <img src="~Ast/img/carousel1.png">
-      </el-carousel-item>
-      <el-carousel-item>
-        <img src="~Ast/img/carousel2.png">
-      </el-carousel-item>
-      <el-carousel-item>
-        <img src="~Ast/img/carousel3.png">
-      </el-carousel-item>
-      <el-carousel-item>
-        <img src="~Ast/img/carousel4.png">
-      </el-carousel-item>
-      <el-carousel-item>
-        <img src="~Ast/img/carousel5.png">
+  <div class="l-home">
+    <el-carousel :interval="5000" indicator-position="none" arrow="always" class="l-home-carousel">
+      <el-carousel-item v-for="(item,index) in carouselList" :key="index">
+        <img :src="imgSrcFun(item.src)">
       </el-carousel-item>
     </el-carousel>
-    <l-product-sale-summary-list></l-product-sale-summary-list>
+    <l-product-sale-info-list></l-product-sale-info-list>
   </div>
 </template>
 
 <script>
-import ProductSaleSummaryList from "Cmn/ProductSaleSummaryList";
+import ProductSaleInfoList from "Cmn/ProductSaleInfoList";
 export default {
   name: "LHome",
   components: {
-    LProductSaleSummaryList: ProductSaleSummaryList
+    LProductSaleInfoList: ProductSaleInfoList
   },
   data: function() {
-    return {};
-  }
+    return {
+      carouselList: [
+        { src: "carousel1.png" },
+        { src: "carousel2.png" },
+        { src: "carousel3.png" },
+        { src: "carousel4.png" },
+        { src: "carousel5.png" }
+      ]
+    };
+  },
+  methods: {
+    imgSrcFun: function(val) {
+      return require("Ast/img/" + val);
+    }
+  },
+  filters: {}
 };
 </script>
 
- <style>
+<style lang="less">
+.l-home {
+  background-color: inherit;
+}
+.l-home-carousel {
+  margin-bottom: 20px;
+  background-color: white;
+}
 </style>
