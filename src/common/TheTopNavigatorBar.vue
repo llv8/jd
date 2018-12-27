@@ -29,13 +29,15 @@
       active-text-color="#ffd04b"
     >
       <el-menu-item index="1">
-        <i class="fa fa-home"></i> Home
+        <i class="fa fa-home"></i>
+        <router-link to="/">Home</router-link>
       </el-menu-item>
       <el-menu-item index="2">
         <i class="fa fa-user"></i> My Account
       </el-menu-item>
       <el-menu-item index="3">
-        <i class="fa fa-edit"></i> Free Register
+        <i class="fa fa-edit"></i>
+        <router-link to="/register">Free Register</router-link>
       </el-menu-item>
       <el-submenu index="4">
         <template slot="title">
@@ -46,7 +48,8 @@
         </el-menu-item>
       </el-submenu>
       <el-menu-item index="5">
-        <i class="fa fa-envelope"></i> Contact Us
+        <i class="fa fa-envelope"></i>
+        <router-link to="/contactus">Contact Us</router-link>
       </el-menu-item>
       <el-menu-item index="6">
         <i class="fa fa-shopping-cart"></i> Item(s)-$0.00
@@ -64,7 +67,7 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .el-header {
   font-family: FontAwesome;
   .lv-socialNw {

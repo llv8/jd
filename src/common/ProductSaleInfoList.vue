@@ -5,7 +5,7 @@
         <h5>New Products</h5>
         <span>
           <i @click="scrollPrev" class="el-icon-caret-left"></i>
-          <i @click="scrollPrev" class="el-icon-caret-right"></i>
+          <i @click="scrollNext" class="el-icon-caret-right"></i>
         </span>
       </div>
       <hr>
@@ -17,7 +17,7 @@
       >
         <div>
           <a href="#" class="tag" v-if="prod.isNew"></a>
-          <img :src="imgUrl(prod.name)">
+          <img :src="prod.name">
         </div>
       </el-col>
       <el-col :span="8" v-for="(prod) in prodList" :key="prod.name">
@@ -35,7 +35,10 @@ export default {
     LProductSaleInfo: ProductSaleInfo
   },
   created: function() {
-    this.direct = 1;
+    this.scrollList = this.getNewScrollList();
+    this.newProdList.forEach(element => {
+      element.name = this.imgUrl(element.name);
+    });
   },
   data: function() {
     return {
@@ -54,21 +57,16 @@ export default {
         { name: "p10.jpg", date: new Date(), isNew: false },
         { name: "p11.jpg", date: new Date(), isNew: false },
         { name: "p12.jpg", date: new Date(), isNew: false },
-        { name: "p13.jpg", date: new Date(), isNew: false },
-        { name: "p14.jpg", date: new Date(), isNew: true }
+        { name: "p13.jpg", date: new Date(), isNew: false }
       ],
-      scrollIndex: 0,
-      direct: 0
+      scrollList: [],
+      start: 0,
+      step: 4
     };
   },
   computed: {
-    scrollNewProdList: {
-      get: function() {
-        return this.getScrollList(this);
-      },
-      set: function(newVal) {
-        this.scrollNewProdList = newVal;
-      }
+    scrollNewProdList: function() {
+      return this.scrollList;
     }
   },
   methods: {
@@ -76,23 +74,25 @@ export default {
       return require("Ast/img/" + name);
     },
     scrollNext: function() {
-      this.direct = 1;
-      this.scrollNewProdList = this.getScrollList(this);
+      this.start = this.start + this.step;
+      this.scrollList = this.getNewScrollList();
     },
     scrollPrev: function() {
-      this.direct = -1;
-      this.scrollNewProdList = this.getScrollList(this);
+      this.start = this.start - this.step;
+      this.scrollList = this.getNewScrollList();
     },
-    getScrollList: function(vm) {
-      let step = vm.direct * 4;
-      let start = vm.scrollIndex;
-      let scrollList = vm.newProdList.slice(start, start + step);
-      vm.scrollIndex =
-        start + step > vm.newProdList.length
-          ? 0
-          : start + step < 0
-          ? vm.newProdList.length
-          : start + step;
+    getNewScrollList: function() {
+      let end = this.start + this.step;
+      if (this.start > this.newProdList.length) {
+        this.start = 0;
+        end = this.start + this.step;
+      }
+      if (this.start < 0) {
+        this.start =
+          (Math.ceil(this.newProdList.length / this.step) - 1) * this.step;
+        end = this.newProdList.length;
+      }
+      let scrollList = this.newProdList.slice(this.start, end);
       return scrollList;
     }
   }
@@ -100,7 +100,7 @@ export default {
 </script>
 
 
-<style lang="less">
+<style lang="less" scoped>
 .l-prodlist {
   background-color: #f5f5f5;
   border: 1px solid #e3e3e3;

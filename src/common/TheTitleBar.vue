@@ -8,7 +8,9 @@
           mode="horizontal"
           @select="handleSelect"
         >
-          <el-menu-item index="1">Home</el-menu-item>
+          <el-menu-item index="1">
+            <router-link to="/">Home</router-link>
+          </el-menu-item>
           <el-menu-item index="2">List View</el-menu-item>
           <el-menu-item index="3">Grid View</el-menu-item>
           <el-menu-item index="4">Tree Column</el-menu-item>
@@ -41,7 +43,7 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 .lv-top-space {
   padding: 80 0 20 0;
   .el-menu {

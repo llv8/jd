@@ -9,16 +9,9 @@
       <div class="l-layout">
         <l-the-title-bar></l-the-title-bar>
       </div>
-      <el-container class="l-layout l-content">
-        <el-aside width="200px">
-          <l-the-product-category></l-the-product-category>
-          <l-the-side></l-the-side>
-        </el-aside>
 
-        <el-main class="l-main">
-          <l-home></l-home>
-        </el-main>
-      </el-container>
+      <router-view name="main"></router-view>
+
       <el-footer>
         <div class="l-layout">
           <l-the-footer></l-the-footer>
@@ -31,38 +24,20 @@
 import TheTopNavigatorBar from "Cmn/TheTopNavigatorBar";
 import TheFooter from "Cmn/TheFooter";
 import TheTitleBar from "Cmn/TheTitleBar";
-import TheProductCategory from "Cmn/TheProductCategory";
-import TheSide from "Cmn/TheSide";
-import Home from "@/home/Home";
-//import from ;
-//import from ;
 export default {
   name: "LTheTemplate",
   components: {
     LTheTopNavigatorBar: TheTopNavigatorBar,
     LTheFooter: TheFooter,
-    LTheTitleBar: TheTitleBar,
-    LTheProductCategory: TheProductCategory,
-    LTheSide: TheSide,
-    LHome: Home
+    LTheTitleBar: TheTitleBar
   }
 };
 </script>
 
-<style>
-body {
-  background: url(~Ast/img/white_leather.png) repeat 0 0;
-  margin: 0;
-}
+<style lang="less" scoped>
 .l-layout {
   width: 75%;
   margin: auto;
-}
-.l-main {
-  background-color: inherit;
-  margin-left: 20;
-}
-.l-content {
 }
 .l-frame .el-header,
 .l-frame .el-footer {
@@ -72,9 +47,5 @@ body {
   box-shadow: 0 0 3px #b1afaf;
   line-height: inherit;
   text-align: left;
-}
-
-.l-frame .el-aside {
-  background-color: inherit;
 }
 </style>

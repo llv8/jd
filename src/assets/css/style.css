@@ -1,0 +1,58 @@
+body {
+    background: url(~Ast/img/white_leather.png) repeat 0 0;
+    margin: 0;
+}
+
+.font16 {
+    font-size: 16;
+}
+
+.font16i {
+    font-size: 16 !important;
+}
+
+.font16b {
+    font-size: 16;
+    font-weight: bold;
+}
+
+.font16bi {
+    font-size: 16 !important;
+    font-weight: bold !important;
+}
+
+.font18 {
+    font-size: 18;
+}
+
+.font18i {
+    font-size: 18 !important;
+}
+
+.font18b {
+    font-size: 18;
+    font-weight: bold;
+}
+
+.font18bi {
+    font-size: 18 !important;
+    font-weight: bold !important;
+}
+
+.font20 {
+    font-size: 20;
+}
+
+.font20i {
+    font-size: 20 !important;
+}
+
+.font20b {
+    font-size: 20;
+    font-weight: bold;
+}
+
+.font20bi {
+    font-size: 20 !important;
+    font-weight: bold !important;
+}

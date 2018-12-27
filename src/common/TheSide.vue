@@ -24,13 +24,21 @@
         <small>Click to view</small>
       </a>
     </el-col>
-    <el-col class="l-side4"></el-col>
+    <el-col class="l-side4">
+      <el-card :body-style="{ padding: '0px' }">
+        <img src="~Ast/img/p14.jpg" class="image">
+        <div class="info">
+          <el-button type="info">View</el-button>
+          <span>$22.00</span>
+        </div>
+      </el-card>
+    </el-col>
   </el-col>
 </template>
 <script>
 export default {};
 </script>
-<style lang="less">
+<style lang="less" scoped>
 .l-side1 {
   margin: 20 0 0 0;
   .alert-warning {
@@ -71,6 +79,21 @@ export default {};
     color: #fff;
     text-decoration: none;
     background: #f86706;
+  }
+}
+
+.l-side4 {
+  margin: 20 0 0 0;
+  img {
+    width: 100%;
+  }
+  div.info {
+    line-height: normal;
+    background-color: ddd;
+    padding: 8 0;
+    button {
+      margin-right: 20;
+    }
   }
 }
 </style>
