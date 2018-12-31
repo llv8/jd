@@ -13,18 +13,16 @@
 <script>
 import TheProductCategory from "Cmn/TheProductCategory";
 import TheSide from "Cmn/TheSide";
-import Home from "@/home/Home";
 export default {
   name: "LTheMain",
   components: {
     LTheProductCategory: TheProductCategory,
-    LTheSide: TheSide,
-    LHome: Home
+    LTheSide: TheSide
   }
 };
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .l-main {
   width: 75%;
   margin: auto;

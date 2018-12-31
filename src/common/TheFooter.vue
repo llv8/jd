@@ -23,7 +23,7 @@
   </div>
 </template>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .copyright {
   height: 100%;
   font-size: 14;

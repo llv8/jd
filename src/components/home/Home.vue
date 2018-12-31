@@ -35,7 +35,7 @@ export default {
   filters: {}
 };
 </script>
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .l-home {
   background-color: inherit;
 }

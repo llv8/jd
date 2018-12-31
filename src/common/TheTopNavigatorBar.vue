@@ -5,7 +5,6 @@
       mode="horizontal"
       background-color="#f2f2f2"
       text-color="#333"
-      active-text-color="#ffd04b"
     >
       <el-menu-item index="1">
         <i class="fa fa-github"></i>
@@ -22,52 +21,54 @@
     </el-menu>
 
     <el-menu
+      :router="true"
       class="el-menu-demo lv-el-menu"
       mode="horizontal"
       background-color="#f2f2f2"
       text-color="#333"
-      active-text-color="#ffd04b"
+      default-active="/"
     >
-      <el-menu-item index="1">
-        <i class="fa fa-home"></i>
-        <router-link to="/">Home</router-link>
+      <el-menu-item index="/">
+        <i class="fa fa-home"></i>Home
       </el-menu-item>
       <el-menu-item index="2">
         <i class="fa fa-user"></i> My Account
       </el-menu-item>
-      <el-menu-item index="3">
+      <el-menu-item index="/register">
         <i class="fa fa-edit"></i>
-        <router-link to="/register">Free Register</router-link>
+        Free Register
       </el-menu-item>
-      <el-submenu index="4">
-        <template slot="title">
-          <i class="fa fa-cog"></i> Tool
-        </template>
-        <el-menu-item index="4-1">
-          <LCustomTheme></LCustomTheme>
-        </el-menu-item>
-      </el-submenu>
-      <el-menu-item index="5">
+      <el-menu-item index @click="colorTheme">
+        <i class="fa fa-cog"></i>切换主题色
+      </el-menu-item>
+      <el-menu-item index="/contactus">
         <i class="fa fa-envelope"></i>
-        <router-link to="/contactus">Contact Us</router-link>
+        Contact Us
       </el-menu-item>
-      <el-menu-item index="6">
-        <i class="fa fa-shopping-cart"></i> Item(s)-$0.00
+      <el-menu-item index="/orderCart">
+        <i class="fa fa-shopping-cart"></i>
+        Item(s)-$0.00
       </el-menu-item>
     </el-menu>
   </div>
 </template>
 <script>
-import CustomTheme from "@/theme/CustomTheme";
+import eventdata from "./event.js";
 export default {
   name: "LTheTopNavigatorBar",
-  components: {
-    LCustomTheme: CustomTheme
+  components: {},
+  data() {
+    return {};
+  },
+  methods: {
+    colorTheme: function() {
+      eventdata.$emit("transfer");
+    }
   }
 };
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .el-header {
   font-family: FontAwesome;
   .lv-socialNw {

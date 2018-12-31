@@ -54,11 +54,14 @@ export default {
         note: ""
       }
     };
+  },
+  methods: {
+    onSubmit: function() {}
   }
 };
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .l-contactus {
   width: 75%;
   margin: auto;

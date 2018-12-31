@@ -1,16 +1,35 @@
 <template>
-  <el-color-picker v-model="theme" class="theme-picker" popper-class="theme-picker-dropdown">Theme</el-color-picker>
+  <el-dialog title="切换主题色" :before-close="handleClose" :visible="dialogVisible" width="30%">
+    <el-form>
+      <el-form-item label="主题色">
+        <el-color-picker v-model="theme" class="theme-picker"></el-color-picker>
+      </el-form-item>
+      <el-form-item>
+        <el-button type="primary" @click="dialogVisible = false">切换</el-button>
+        <el-button @click="dialogVisible = false">重置</el-button>
+      </el-form-item>
+    </el-form>
+  </el-dialog>
 </template>
 
 <script>
+import eventdata from "../../common/event.js";
 const version = require("element-ui/package.json").version; // element-ui version from node_modules
 const ORIGINAL_THEME = "#409EFF"; // default color
 export default {
+  props: {},
   data() {
     return {
       chalk: "", // content of theme-chalk css
-      theme: ORIGINAL_THEME
+      theme: ORIGINAL_THEME,
+      dialogVisible: false
     };
+  },
+  mounted() {
+    let that = this;
+    eventdata.$on("transfer", function(msg) {
+      that.dialogVisible = true;
+    });
   },
   watch: {
     theme(val, oldVal) {
@@ -68,6 +87,9 @@ export default {
     }
   },
   methods: {
+    handleClose() {
+      this.dialogVisible = false;
+    },
     updateStyle(style, oldCluster, newCluster) {
       let newStyle = style;
       oldCluster.forEach((color, index) => {
@@ -128,10 +150,4 @@ export default {
 </script>
 
 <style>
-.theme-picker .el-color-picker__trigger {
-  vertical-align: middle;
-}
-.theme-picker-dropdown .el-color-dropdown__link-btn {
-  display: none;
-}
 </style>

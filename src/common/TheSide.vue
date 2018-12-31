@@ -38,7 +38,7 @@
 <script>
 export default {};
 </script>
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .l-side1 {
   margin: 20 0 0 0;
   .alert-warning {

@@ -5,6 +5,7 @@ import Home from "@/home/Home";
 import MyAccount from "@/myaccount/MyAccount";
 import Register from "@/myaccount/Register";
 import ContactUs from "@/ContactUs";
+import MyOrderCart from "@/ordercart/MyOrderCart";
 Vue.use(VueRouter);
 const router = new VueRouter({
   routes: [{
@@ -17,6 +18,11 @@ const router = new VueRouter({
       components: {
         content: Home
       }
+    }, {
+      path: '/register',
+      components: {
+        content: Register
+      }
     }]
   }, {
     path: '/myaccount',
@@ -24,14 +30,14 @@ const router = new VueRouter({
       content: MyAccount
     }
   }, {
-    path: '/register',
-    components: {
-      content: Register
-    }
-  }, {
     path: '/contactus',
     components: {
       main: ContactUs
+    }
+  }, {
+    path: '/orderCart',
+    components: {
+      main: MyOrderCart
     }
   }]
 });

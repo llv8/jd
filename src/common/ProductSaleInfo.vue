@@ -35,7 +35,7 @@ export default {
 </script>
 
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .l-card {
   margin: 10;
   .el-card__body {

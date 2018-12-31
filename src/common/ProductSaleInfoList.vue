@@ -100,7 +100,7 @@ export default {
 </script>
 
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .l-prodlist {
   background-color: #f5f5f5;
   border: 1px solid #e3e3e3;
