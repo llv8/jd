@@ -16,8 +16,6 @@
           <l-the-footer></l-the-footer>
         </div>
       </el-footer>
-      <router-view name="dialog"></router-view>
-      <l-custom-theme-dialog></l-custom-theme-dialog>
     </el-container>
   </div>
 </template>

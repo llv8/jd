@@ -50,8 +50,7 @@ export default {
   data() {
     return {
       chalk: "", // content of theme-chalk css
-      theme: ORIGINAL_THEME,
-      dialogVisible: false
+      theme: ORIGINAL_THEME
     };
   },
   watch: {
