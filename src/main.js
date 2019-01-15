@@ -5,7 +5,7 @@ import TheTemplate from 'Cmn/TheTemplate';
 import "element-ui/lib/theme-chalk/index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.min.css";
-import "./assets/css/style.css";
+import "./assets/css/style.scss";
 
 Vue.use(Element);
 

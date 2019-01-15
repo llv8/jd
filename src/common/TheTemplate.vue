@@ -34,7 +34,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "element-theme-chalk/src/common/var.scss";
+@import "Ast/css/var.scss";
 .l-layout {
   width: 75%;
   margin: auto;
@@ -50,7 +50,7 @@ export default {
     margin-top: 20;
   }
   .el-header {
-    background-color: $--color-primary;
+    background-color: $--base-color;
     padding: 0;
   }
 }

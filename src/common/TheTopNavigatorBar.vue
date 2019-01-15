@@ -175,7 +175,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "element-theme-chalk/src/common/var.scss";
+@import "Ast/css/var.scss";
 .l-top-navigator {
   font-family: FontAwesome;
   .lv-socialNw {
@@ -189,16 +189,23 @@ export default {
     float: right;
   }
   .fa {
-    color: #fff;
     text-shadow: 1px 1px 1px #ccc;
     font-size: 1.5em;
   }
   li.el-menu-item:hover,
   li.el-menu-item.active {
+    background-color: $--base-focus-color;
   }
-  li.el-menu-item {
-    background-color: $--color-primary;
+  .el-menu {
+    background-color: $--base-color;
+  }
+  .el-menu-item i,
+  .el-menu-item,
+  .el-menu--horizontal .el-menu-item:not(.is-disabled):focus,
+  .el-menu--horizontal .el-menu-item:not(.is-disabled):hover,
+  .el-menu--horizontal > .el-menu-item.is-active {
     color: #fff;
+    background-color: $--base-color;
   }
   .theme-picker {
     visibility: hidden;
